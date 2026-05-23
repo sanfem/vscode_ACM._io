@@ -33,8 +33,6 @@ public class Bullet {
             case RIGHT:
                 x += speed;
                 break;
-            default:
-                break;
         }
     }
 
