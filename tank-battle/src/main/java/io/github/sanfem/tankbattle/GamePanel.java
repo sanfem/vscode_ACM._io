@@ -392,6 +392,16 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         currentLevelIndex = index;
         Level level = levels[index];
         String[] rows = level.getRows();
+        if (rows.length == 0 || rows[0].length() == 0) {
+            tileMap = new TileMap(new TileType[0][0], TILE_SIZE);
+            enemies = new ArrayList<EnemyTank>();
+            bullets = new ArrayList<Bullet>();
+            player = new Tank(0, 0, TANK_SIZE, PLAYER_SPEED, PLAYER_HEALTH, true,
+                    new Color(70, 180, 90), new Color(40, 120, 60), PLAYER_SHOT_COOLDOWN);
+            state = GameState.GAME_OVER;
+            return;
+        }
+
         TileType[][] tiles = new TileType[rows.length][rows[0].length()];
         List<Point> enemySpawns = new ArrayList<Point>();
         Point playerSpawn = null;
