@@ -6,7 +6,7 @@ public class Level {
 
     public Level(String name, String[] rows) {
         this.name = name;
-        this.rows = rows;
+        this.rows = rows.clone();
     }
 
     public String getName() {
@@ -14,6 +14,6 @@ public class Level {
     }
 
     public String[] getRows() {
-        return rows;
+        return rows.clone();
     }
 }

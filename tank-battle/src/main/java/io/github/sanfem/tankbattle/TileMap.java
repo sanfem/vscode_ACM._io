@@ -12,6 +12,9 @@ public class TileMap {
     }
 
     public int getWidth() {
+        if (tiles.length == 0) {
+            return 0;
+        }
         return tiles[0].length;
     }
 
@@ -28,6 +31,9 @@ public class TileMap {
     }
 
     public TileType getTile(int col, int row) {
+        if (tiles.length == 0) {
+            return TileType.STEEL;
+        }
         if (row < 0 || row >= tiles.length || col < 0 || col >= tiles[row].length) {
             return TileType.STEEL;
         }
