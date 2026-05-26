@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人作品集</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>个人作品集</h1>
+      <p>一个简单的日记与学习展示页面，支持导入 Markdown 文件。</p>
+    </header>
+
+    <nav class="site-nav">
+      <a href="#diary">日记</a>
+      <a href="#study">学习展示</a>
+    </nav>
+
+    <main class="site-main">
+      <section id="diary" class="card">
+        <h2>日记</h2>
+        <div class="controls">
+          <button class="load-sample" data-md="diary.md" data-target="diary-content">
+            载入示例日记
+          </button>
+          <label class="file-label">
+            导入本地 MD
+            <input class="md-input" type="file" accept=".md" data-target="diary-content" />
+          </label>
+        </div>
+        <div id="diary-content" class="md-content">
+          <p>点击“载入示例日记”或导入自己的 Markdown 文件。</p>
+        </div>
+      </section>
+
+      <section id="study" class="card">
+        <h2>学习展示</h2>
+        <div class="controls">
+          <button class="load-sample" data-md="study.md" data-target="study-content">
+            载入学习记录
+          </button>
+          <label class="file-label">
+            导入本地 MD
+            <input class="md-input" type="file" accept=".md" data-target="study-content" />
+          </label>
+        </div>
+        <div id="study-content" class="md-content">
+          <p>可以展示课程笔记、项目总结或阶段目标。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 个人作品集</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
